@@ -1,0 +1,34 @@
+﻿<Page x:Class="AgendaWPF.Pages.ListBroker"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AgendaWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListBroker">
+
+    <Grid Background="White" Margin="0,0,0,-0.4">
+        <DataGrid Name="dgBrokers" AutoGenerateColumns="False" IsReadOnly="True" CanUserResizeColumns="True" CanUserAddRows="False" CanUserSortColumns="True" ItemsSource="{Binding}" Margin="0,0,0,117" Width="334" Height="Auto" HorizontalAlignment="Left" SelectionChanged="dgBrokers_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Nom" Binding="{Binding lastname}" />
+                <DataGridTextColumn Header="Prénom" Binding="{Binding firstname}" />
+                <DataGridTextColumn Header="Adresse Mail" Binding="{Binding mail}" />
+                <DataGridTextColumn Header="Numéro de téléphone" Binding="{Binding phoneNumber}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Modifier" HorizontalAlignment="Left" Margin="587,232,0,0" VerticalAlignment="Top" Width="75" Click="Edit_Button"/>
+        <Button Content="Supprimer" HorizontalAlignment="Left" Margin="462,232,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="2.719,-0.216" Click="Delete_Button"/>
+        <Button Content="Annuler" HorizontalAlignment="Left" Margin="687,232,0,0" VerticalAlignment="Top" Width="75" Click="Abort_Button"/>
+        <TextBox Name="lastname_input" HorizontalAlignment="Left" Height="23" Margin="642,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="firstname_input" HorizontalAlignment="Left" Height="23" Margin="642,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="mail_input" HorizontalAlignment="Left" Height="23" Margin="642,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="phoneNumber_input" HorizontalAlignment="Left" Height="23" Margin="642,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nom :" HorizontalAlignment="Left" Margin="462,60,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Prénom :" HorizontalAlignment="Left" Margin="462,100,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Adresse Mail :" HorizontalAlignment="Left" Margin="462,141,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="Numéro de téléphone :" HorizontalAlignment="Left" Margin="462,181,0,0" VerticalAlignment="Top" Width="131"/>
+        <TextBlock Name="error_message" HorizontalAlignment="Left" Margin="462,348,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="328" Foreground="red"/>
+    </Grid>
+</Page>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="AgendaWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AgendaWPF"
+        mc:Ignorable="d"
+        Title="AgendaWPF" Height="780" Width="1200">
+    <Grid>
+        <Menu>
+            <MenuItem Header="_Clients">
+                <MenuItem Header="_Ajouter un client ..." Click="AddCustomer_Click" />
+                <Separator />
+                <MenuItem Header="_Liste des clients" Click="CustomerList_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Courtiers">
+                <MenuItem Header="_Ajouter un courtier ..." Click="AddBroker_Click" />
+                <Separator />
+                <MenuItem Header="_Liste des courtiers" Click="ListBroker_Click" />
+            </MenuItem>
+            <MenuItem Header="_Rendez-vous">
+                <MenuItem Header="_Ajouter un rendez-vous ..." Click="AddAppointment_Click" />
+                <Separator />
+                <MenuItem Header="_Liste des rendez-vous" Click="ListAppointment_Click" />
+            </MenuItem>
+        </Menu>
+        <Frame Name="MainFrame" Content="" HorizontalAlignment="Left" Height="714" Margin="10,26,0,0" VerticalAlignment="Top" Width="1174"/>
+    </Grid>
+</Window>
